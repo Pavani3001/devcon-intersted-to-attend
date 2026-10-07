@@ -17,17 +17,18 @@ let selectedCaption = "linkedin";
 const photoCircle = { centerX: 723, centerY: 625, diameter: 316 };
 
 const captions = {
-  linkedin: `Excited to share to attend DEVCON 8 India 🇮🇳🚀
+  linkedin: `Grateful for an amazing Road to DevCon8 India event with Kramers Community! 🫶
 
-Looking forward to connecting with developers, builders, and tech enthusiasts, learning from the community, and exploring new ideas around technology and innovation.
+Thank you to everyone who joined, shared, learned, and made it special.
+The journey continues. 🚀
+See you at DevCon8!
+@EFDevcon
+@jayant99acharya
+@satyaki44
+@candufaz
+@ethereumfndn
 
-📍 Jio World Centre, BKC, Mumbai
-
-📅 3–6 November 2026
-
-Build. Connect. Innovate.
-
-#DEVCON8 #DEVCONIndia #TechCommunity #Developers #Innovation #Mumbai`,
+#DevCon8 #KramersCommunity #Web3`,
   x: `Excited for DEVCON 8 India 🚀🇮🇳
 
 Looking forward to meeting builders, developers & tech enthusiasts, learning, connecting, and exploring new ideas!
