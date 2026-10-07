@@ -31,15 +31,20 @@ Build. Connect. Innovate.
 
 #TechCommunity #Developers
 #DevCon8 #KramersCommunity #Web3`,
-  x: `Excited for DEVCON 8 India 🚀🇮🇳
+  x: `Interested to attend DEVCON 8 India 🚀🇮🇳
 
-Looking forward to meeting builders, developers & tech enthusiasts, learning, connecting, and exploring new ideas!
+Looking forward to meeting builders, developers & tech enthusiasts, and exploring new ideas!
 
 📍 Mumbai | Nov 3–6, 2026
 
-Build. Connect. Innovate.
+@EFDevcon
+@jayant99acharya
+@satyaki44
+@candufaz
+@ethereumfndn
 
-#DEVCON8 #DEVCONIndia #TechCommunity #Developers`,
+#TechCommunity #Developers
+#DevCon8 #KramersCommunity`,
 };
 
 function renderCaption() {
