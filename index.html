@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Create your DevCon 8 India attendee poster." />
+    <title>DevCon 8 | Poster Creator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="intro">
+        <div class="eyebrow"><span></span> DEVCON 8 INDIA</div>
+        <h1>Create your<br /><em>attendee poster.</em></h1>
+        <p class="intro-copy">
+          Add a profile photo and your name to create your personalised
+          official poster.
+        </p>
+        <div class="event-meta">
+          <div><strong>03—06</strong><span>NOVEMBER 2026</span></div>
+          <div><strong>MUMBAI</strong><span>JIO WORLD CENTRE · BKC</span></div>
+        </div>
+      </section>
+
+      <section class="creator-card" aria-label="Poster creator">
+        <div class="form-panel">
+          <div class="panel-heading">
+            <div>
+              <p class="section-label">01 / PERSONALISE</p>
+              <h2>Make it yours</h2>
+            </div>
+            <div class="status-dot" title="Ready"></div>
+          </div>
+
+          <label class="upload-zone" for="photo-input">
+            <input id="photo-input" type="file" accept="image/*" />
+            <span class="upload-icon">+</span>
+            <span class="upload-title" id="upload-title">Upload a profile photo</span>
+            <span class="upload-hint">JPG or PNG · square photos work best</span>
+          </label>
+
+          <label class="field-label" for="name-input">Your name</label>
+          <input
+            id="name-input"
+            class="text-input"
+            type="text"
+            maxlength="28"
+            placeholder="e.g. Aisha Sharma"
+            autocomplete="name"
+          />
+
+          <button id="download-button" class="download-button" type="button">
+            <span>Download poster</span><span class="arrow">↗</span>
+          </button>
+          <p class="privacy-note">Your photo stays in this browser and is never uploaded.</p>
+        </div>
+
+        <div class="preview-panel">
+          <div class="preview-topline">
+            <span class="section-label">02 / PREVIEW</span>
+            <span id="preview-status">LIVE</span>
+          </div>
+          <div class="poster-wrap">
+            <canvas id="poster-canvas" width="1446" height="1088"></canvas>
+          </div>
+          <div class="caption-heading">
+            <div>
+              <span class="section-label">03 / CAPTION</span>
+              <p class="caption-subtitle">Share your excitement with the community</p>
+            </div>
+            <button id="copy-caption-button" class="copy-button" type="button">Copy</button>
+          </div>
+          <div class="caption-tabs" role="tablist" aria-label="Social caption">
+            <button class="caption-tab active" type="button" role="tab" aria-selected="true" data-caption="linkedin">LinkedIn</button>
+            <button class="caption-tab" type="button" role="tab" aria-selected="false" data-caption="x">X</button>
+          </div>
+          <pre id="caption-text" class="caption-text"></pre>
+        </div>
+      </section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
