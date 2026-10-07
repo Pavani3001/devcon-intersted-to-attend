@@ -59,9 +59,9 @@ function renderPoster() {
   if (profilePhoto) {
     context.save();
     context.beginPath();
-    context.arc(723, 531, 162, 0, Math.PI * 2);
+    context.arc(723, 551, 142, 0, Math.PI * 2);
     context.clip();
-    drawCover(profilePhoto, 561, 369, 324, 324);
+    drawCover(profilePhoto, 581, 409, 284, 284);
     context.restore();
   }
 
