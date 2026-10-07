@@ -26,14 +26,17 @@ Looking forward to meeting builders, developers & tech enthusiasts, learning, co
 Build. Connect. Innovate.
 
 @Jayant Acharya
+@Satyaki KC
+@Candela Fazzano
 @Kramer's Community
 @ethereumfndn
+@Jio World Centre
 
 #TechCommunity #Developers
 #DevCon8 #KramersCommunity #Web3`,
   x: `Interested to attend DEVCON 8 India 🚀🇮🇳
 
-Looking forward to meeting builders, developers & tech enthusiasts, and exploring new ideas!
+Looking forward to meeting builders, tech enthusiasts, and exploring new ideas!
 
 📍 Mumbai | Nov 3–6, 2026
 
@@ -42,8 +45,9 @@ Looking forward to meeting builders, developers & tech enthusiasts, and explorin
 @satyaki44
 @candufaz
 @ethereumfndn
+@JWCCMumbai
 
-#TechCommunity #Developers
+#web #JWCCMumbai
 #DevCon8 #KramersCommunity`,
 };
 
