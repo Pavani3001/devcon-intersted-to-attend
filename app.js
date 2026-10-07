@@ -14,9 +14,10 @@ const captionTabs = document.querySelectorAll(".caption-tab");
 const poster = new Image();
 let profilePhoto = null;
 let selectedCaption = "linkedin";
+const photoCircle = { centerX: 723, centerY: 615, diameter: 308 };
 
 const captions = {
-  linkedin: `Excited to be attending DEVCON 8 India 🇮🇳🚀
+  linkedin: `Excited to share to attend DEVCON 8 India 🇮🇳🚀
 
 Looking forward to connecting with developers, builders, and tech enthusiasts, learning from the community, and exploring new ideas around technology and innovation.
 
@@ -57,11 +58,19 @@ function renderPoster() {
   context.drawImage(poster, 0, 0, canvas.width, canvas.height);
 
   if (profilePhoto) {
+    const photoX = photoCircle.centerX - photoCircle.diameter / 2;
+    const photoY = photoCircle.centerY - photoCircle.diameter / 2;
     context.save();
     context.beginPath();
-    context.arc(723, 551, 142, 0, Math.PI * 2);
+    context.arc(
+      photoCircle.centerX,
+      photoCircle.centerY,
+      photoCircle.diameter / 2,
+      0,
+      Math.PI * 2,
+    );
     context.clip();
-    drawCover(profilePhoto, 581, 409, 284, 284);
+    drawCover(profilePhoto, photoX, photoY, photoCircle.diameter, photoCircle.diameter);
     context.restore();
   }
 
