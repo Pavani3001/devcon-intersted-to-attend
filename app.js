@@ -141,12 +141,69 @@ uploadZone.addEventListener("drop", (event) => {
   uploadZone.classList.remove("dragging");
   loadPhoto(event.dataTransfer.files[0]);
 });
-downloadButton.addEventListener("click", () => {
-  const link = document.createElement("a");
-  const fileName = nameInput.value.trim().toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
-  link.download = `${fileName || "devcon8-poster"}.png`;
-  link.href = canvas.toDataURL("image/png");
-  link.click();
+function isIosDevice() {
+  return /iPad|iPhone|iPod/.test(navigator.userAgent)
+    || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+}
+
+function getPosterFileName() {
+  const name = nameInput.value.trim().toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+  return `${name || "devcon8-poster"}.png`;
+}
+
+function openPosterForSaving(dataUrl) {
+  const posterWindow = window.open();
+  if (!posterWindow) {
+    throw new Error("The browser blocked the poster window. Allow pop-ups and try again.");
+  }
+  posterWindow.document.title = "Save your DEVCON 8 poster";
+  posterWindow.document.body.style.cssText = "margin:0;background:#0a0a19;text-align:center;";
+  const image = posterWindow.document.createElement("img");
+  image.src = dataUrl;
+  image.alt = "Your DEVCON 8 India poster";
+  image.style.cssText = "max-width:100%;height:auto;";
+  posterWindow.document.body.appendChild(image);
+}
+
+function dataUrlToBlob(dataUrl) {
+  const [header, encodedData] = dataUrl.split(",");
+  const binaryData = atob(encodedData);
+  const bytes = new Uint8Array(binaryData.length);
+  for (let index = 0; index < binaryData.length; index += 1) {
+    bytes[index] = binaryData.charCodeAt(index);
+  }
+  return new Blob([bytes], { type: header.match(/:(.*?);/)[1] });
+}
+
+downloadButton.addEventListener("click", async () => {
+  const fileName = getPosterFileName();
+  const dataUrl = canvas.toDataURL("image/png");
+
+  try {
+    if (isIosDevice()) {
+      const file = new File([dataUrlToBlob(dataUrl)], fileName, { type: "image/png" });
+
+      if (navigator.share && (!navigator.canShare || navigator.canShare({ files: [file] }))) {
+        await navigator.share({
+          files: [file],
+          title: "DEVCON 8 India poster",
+          text: "My DEVCON 8 India attendee poster",
+        });
+      } else {
+        openPosterForSaving(dataUrl);
+      }
+      return;
+    }
+
+    const link = document.createElement("a");
+    link.download = fileName;
+    link.href = dataUrl;
+    link.click();
+  } catch (error) {
+    if (error.name === "AbortError") return;
+    previewStatus.textContent = "DOWNLOAD FAILED";
+    console.error("Unable to prepare the poster for download.", error);
+  }
 });
 captionTabs.forEach((tab) => {
   tab.addEventListener("click", () => {
