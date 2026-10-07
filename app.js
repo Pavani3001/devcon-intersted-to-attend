@@ -14,7 +14,7 @@ const captionTabs = document.querySelectorAll(".caption-tab");
 const poster = new Image();
 let profilePhoto = null;
 let selectedCaption = "linkedin";
-const photoCircle = { centerX: 723, centerY: 615, diameter: 308 };
+const photoCircle = { centerX: 723, centerY: 625, diameter: 316 };
 
 const captions = {
   linkedin: `Excited to share to attend DEVCON 8 India 🇮🇳🚀
